@@ -35,7 +35,11 @@ class MoviesBloc extends Bloc<MoviesEvent, MoviesState> {
       //creating state
       final newState = result.fold((MainFailure failure) {
         return const MoviesState(
-            movieList: [], isLoading: false, isError: true, addMyList: []);
+          movieList: [],
+          isLoading: false,
+          isError: true,
+          addMyList: [],
+        );
       }, (MovieRespo result) {
         return MoviesState(
             movieList: [result],
@@ -47,14 +51,14 @@ class MoviesBloc extends Bloc<MoviesEvent, MoviesState> {
     });
     on<AddMyList>(
       (event, emit) async {
-        myListId.add(event.id);
-        
+        //  myListId
+        MyList().myListId.add(event.movieRespo);
         emit(state);
       },
     );
     on<RemoveMyList>(
       (event, emit) async {
-        myListId.remove(event.id);
+        MyList().myListId.remove(event.movieRespo);
       },
     );
   }

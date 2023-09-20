@@ -41,7 +41,7 @@ class MoreLikeListWidgets extends StatelessWidget {
                   final movie = state.top10List[index];
                   return InkWell(
                     onTap: () {
-                      Navigator.push(
+                      Navigator.pushReplacement(
                           context,
                           MaterialPageRoute(
                             builder: (context) =>

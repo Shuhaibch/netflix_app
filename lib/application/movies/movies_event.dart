@@ -7,9 +7,9 @@ class MoviesEvent with _$MoviesEvent {
   }) = Initialize;
   
   factory MoviesEvent.addMyList({
-    required String id,
+    required MovieRespo movieRespo,
   }) = AddMyList;
   factory MoviesEvent.removeMyList({
-    required String id,
+   required MovieRespo movieRespo,
   }) = RemoveMyList;
 }

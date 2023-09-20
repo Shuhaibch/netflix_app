@@ -3,6 +3,7 @@ import 'package:google_fonts/google_fonts.dart';
 import 'package:netflix_app/core/constants/constants.dart';
 import 'package:netflix_app/presantation/profile/widgets/center_share_part.dart';
 import 'package:netflix_app/presantation/profile/widgets/profile_pic_widget.dart';
+import 'package:netflix_app/presantation/profile/widgets/screen_mylist.dart';
 
 import '../widgets/back_button_widget.dart';
 
@@ -51,8 +52,13 @@ class ProfileScreen extends StatelessWidget {
 
                 //rest of settings
 
-                const RestOfSettings(
-                  title: 'My List',
+                InkWell(
+                  onTap: () => Navigator.of(context).push(MaterialPageRoute(
+                    builder: (context) => const ScreenMyList(),
+                  )),
+                  child: const RestOfSettings(
+                    title: 'My List',
+                  ),
                 ),
                 const RestOfSettings(
                   title: 'App Settings',

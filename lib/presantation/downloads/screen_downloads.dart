@@ -124,11 +124,12 @@ class Section2 extends StatelessWidget {
                         InkWell(
                           onTap: () {
                             Navigator.push(
-                                context,
-                                MaterialPageRoute(
-                                  builder: (context) => MovieScreen(
-                                      id: state.downloads[0].id.toString()),
-                                ));
+                              context,
+                              MaterialPageRoute(
+                                builder: (context) => MovieScreen(
+                                    id: state.downloads[4].id.toString()),
+                              ),
+                            );
                           },
                           child: DownloadsImageWidget(
                             size: Size(
@@ -136,7 +137,7 @@ class Section2 extends StatelessWidget {
                               size.height * 0.25,
                             ),
                             imageList:
-                                '$imageAppendUrl${state.downloads[0].posterPath}',
+                                '$imageAppendUrl${state.downloads[4].posterPath}',
                             margin: const EdgeInsets.only(
                               left: 130,
                               bottom: 50,
@@ -147,11 +148,12 @@ class Section2 extends StatelessWidget {
                         InkWell(
                           onTap: () {
                             Navigator.push(
-                                context,
-                                MaterialPageRoute(
-                                  builder: (context) => MovieScreen(
-                                      id: state.downloads[1].id.toString()),
-                                ));
+                              context,
+                              MaterialPageRoute(
+                                builder: (context) => MovieScreen(
+                                    id: state.downloads[1].id.toString()),
+                              ),
+                            );
                           },
                           child: DownloadsImageWidget(
                             imageList:
@@ -170,11 +172,12 @@ class Section2 extends StatelessWidget {
                         InkWell(
                           onTap: () {
                             Navigator.push(
-                                context,
-                                MaterialPageRoute(
-                                  builder: (context) => MovieScreen(
-                                      id: state.downloads[2].id.toString()),
-                                ));
+                              context,
+                              MaterialPageRoute(
+                                builder: (context) => MovieScreen(
+                                    id: state.downloads[2].id.toString()),
+                              ),
+                            );
                           },
                           child: DownloadsImageWidget(
                             imageList:

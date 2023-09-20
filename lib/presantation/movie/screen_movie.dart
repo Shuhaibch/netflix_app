@@ -72,7 +72,7 @@ class MovieScreen extends StatelessWidget {
                   ),
 
                   //movie buttons
-                  const Buttons(),
+                  Buttons(movieRespo: state.movieList[0]),
 
                   //bars
 

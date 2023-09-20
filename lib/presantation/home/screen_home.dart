@@ -66,18 +66,9 @@ class _ScreenHomePageState extends State<ScreenHomePage> {
                       final _top10 = state.top10List.map((e) {
                         return "$imageAppendUrl${e.posterPath}";
                       }).toList();
-                      final _top10id=state.top10List.map((e) {
+                      final _top10id = state.top10List.map((e) {
                         return e.id;
                       }).toList();
-
-                      // List StateImage(state) {
-                      //   return state.map((e) {
-                      //     return "$imageAppendUrl${e.posterPath}";
-                      //   }).toList();
-                      // }
-
-                      // final _top10im = StateImage(state.top10List);
-                      // print(_top10im);
 
                       final _releasedPastYear =
                           state.releasedIntThePastYearList.map((e) {
@@ -119,7 +110,6 @@ class _ScreenHomePageState extends State<ScreenHomePage> {
                       }
 
                       final mainBgImage = _top10[0];
-                      // '$imageAppendUrl${state.top10List[0].posterPath}';
                       if (state.isLoading) {
                         return const Center(
                           child: CircularProgressIndicator(
@@ -168,7 +158,7 @@ class _ScreenHomePageState extends State<ScreenHomePage> {
                           Padding(
                             padding: const EdgeInsets.only(left: 2),
                             child: NumberCardTile(
-                              id:_top10id.sublist(0, 10),
+                              id: _top10id.sublist(0, 10),
                               title: 'Top 10 Hits In India Today',
                               imageUrl: _top10.sublist(0, 10),
                             ),

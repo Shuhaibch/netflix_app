@@ -1,7 +1,7 @@
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
-import 'package:netflix_app/application/search/search_bloc.dart';
+import 'package:netflix_app/application/home/home_bloc.dart';
 import 'package:netflix_app/core/colors/colors.dart';
 import 'package:netflix_app/core/constants/constants.dart';
 import 'package:netflix_app/core/strings.dart';
@@ -16,10 +16,9 @@ class TreandingListWidgets extends StatelessWidget {
     return Column(
       crossAxisAlignment: CrossAxisAlignment.start,
       children: [
-        
         kheight2,
         Expanded(
-          child: BlocBuilder<SearchBloc, SearchState>(
+          child: BlocBuilder<HomeBloc, HomeState>(
             builder: (context, state) {
               if (state.isLoading) {
                 return const Center(
@@ -27,22 +26,22 @@ class TreandingListWidgets extends StatelessWidget {
                     color: Color.fromARGB(255, 116, 12, 4),
                   ),
                 );
-              } else if (state.isError) {
+              } else if (state.hasError) {
                 return const Center(
                   child: Text('Error While getting data'),
                 );
-              } else if (state.idleList.isEmpty) {
+              } else if (state.trendingList.isEmpty) {
                 return const Center(
-                  child: Text('List empty'),
+                  child: Text('List is empty'),
                 );
               }
               return ListView.separated(
                 shrinkWrap: true,
                 itemBuilder: (context, index) {
-                  final movie = state.idleList[index];
+                  final movie = state.trendingList[index];
                   return InkWell(
                     onTap: () {
-                      Navigator.push(
+                      Navigator.pushReplacement(
                           context,
                           MaterialPageRoute(
                             builder: (context) =>
@@ -55,7 +54,7 @@ class TreandingListWidgets extends StatelessWidget {
                   );
                 },
                 separatorBuilder: (context, index) => kheight3,
-                itemCount: state.idleList.length,
+                itemCount: state.trendingList.length,
               );
             },
           ),

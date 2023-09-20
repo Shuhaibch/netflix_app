@@ -18,21 +18,10 @@ class _ScreenSplashState extends State<ScreenSplash> {
     super.initState();
   }
 
-  
-
   @override
   Widget build(BuildContext context) {
     return Container(
       color: Colors.black,
-      // child: const Center(
-      //   child: SizedBox(
-      //     height: 180,
-      //     width: 180,
-      //     child: Image(
-      //       image: AssetImage("lib/core/Assets/images/splash.png"),
-      //     ),
-      //   ),
-      // ),
       child: Lottie.network(
           'https://assets6.lottiefiles.com/private_files/lf30_F6EtR7.json'),
     );
@@ -42,8 +31,11 @@ class _ScreenSplashState extends State<ScreenSplash> {
     await Future.delayed(
       const Duration(seconds: 5),
     );
-    Navigator.of(context).push(MaterialPageRoute(builder: (ctx) {
-      return ScreenMainPage();
-    }));
+    Navigator.pushReplacement(
+      context,
+      MaterialPageRoute(
+        builder: (context) => ScreenMainPage(),
+      ),
+    );
   }
 }

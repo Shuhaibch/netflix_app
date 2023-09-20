@@ -16,26 +16,25 @@ final _privateConstructorUsedError = UnsupportedError(
 
 /// @nodoc
 mixin _$MoviesEvent {
-  String get id => throw _privateConstructorUsedError;
   @optionalTypeArgs
   TResult when<TResult extends Object?>({
     required TResult Function(String id) initialize,
-    required TResult Function(String id) addMyList,
-    required TResult Function(String id) removeMyList,
+    required TResult Function(MovieRespo movieRespo) addMyList,
+    required TResult Function(MovieRespo movieRespo) removeMyList,
   }) =>
       throw _privateConstructorUsedError;
   @optionalTypeArgs
   TResult? whenOrNull<TResult extends Object?>({
     TResult? Function(String id)? initialize,
-    TResult? Function(String id)? addMyList,
-    TResult? Function(String id)? removeMyList,
+    TResult? Function(MovieRespo movieRespo)? addMyList,
+    TResult? Function(MovieRespo movieRespo)? removeMyList,
   }) =>
       throw _privateConstructorUsedError;
   @optionalTypeArgs
   TResult maybeWhen<TResult extends Object?>({
     TResult Function(String id)? initialize,
-    TResult Function(String id)? addMyList,
-    TResult Function(String id)? removeMyList,
+    TResult Function(MovieRespo movieRespo)? addMyList,
+    TResult Function(MovieRespo movieRespo)? removeMyList,
     required TResult orElse(),
   }) =>
       throw _privateConstructorUsedError;
@@ -61,10 +60,6 @@ mixin _$MoviesEvent {
     required TResult orElse(),
   }) =>
       throw _privateConstructorUsedError;
-
-  @JsonKey(ignore: true)
-  $MoviesEventCopyWith<MoviesEvent> get copyWith =>
-      throw _privateConstructorUsedError;
 }
 
 /// @nodoc
@@ -72,8 +67,6 @@ abstract class $MoviesEventCopyWith<$Res> {
   factory $MoviesEventCopyWith(
           MoviesEvent value, $Res Function(MoviesEvent) then) =
       _$MoviesEventCopyWithImpl<$Res, MoviesEvent>;
-  @useResult
-  $Res call({String id});
 }
 
 /// @nodoc
@@ -85,28 +78,13 @@ class _$MoviesEventCopyWithImpl<$Res, $Val extends MoviesEvent>
   final $Val _value;
   // ignore: unused_field
   final $Res Function($Val) _then;
-
-  @pragma('vm:prefer-inline')
-  @override
-  $Res call({
-    Object? id = null,
-  }) {
-    return _then(_value.copyWith(
-      id: null == id
-          ? _value.id
-          : id // ignore: cast_nullable_to_non_nullable
-              as String,
-    ) as $Val);
-  }
 }
 
 /// @nodoc
-abstract class _$$InitializeCopyWith<$Res>
-    implements $MoviesEventCopyWith<$Res> {
+abstract class _$$InitializeCopyWith<$Res> {
   factory _$$InitializeCopyWith(
           _$Initialize value, $Res Function(_$Initialize) then) =
       __$$InitializeCopyWithImpl<$Res>;
-  @override
   @useResult
   $Res call({String id});
 }
@@ -167,8 +145,8 @@ class _$Initialize implements Initialize {
   @optionalTypeArgs
   TResult when<TResult extends Object?>({
     required TResult Function(String id) initialize,
-    required TResult Function(String id) addMyList,
-    required TResult Function(String id) removeMyList,
+    required TResult Function(MovieRespo movieRespo) addMyList,
+    required TResult Function(MovieRespo movieRespo) removeMyList,
   }) {
     return initialize(id);
   }
@@ -177,8 +155,8 @@ class _$Initialize implements Initialize {
   @optionalTypeArgs
   TResult? whenOrNull<TResult extends Object?>({
     TResult? Function(String id)? initialize,
-    TResult? Function(String id)? addMyList,
-    TResult? Function(String id)? removeMyList,
+    TResult? Function(MovieRespo movieRespo)? addMyList,
+    TResult? Function(MovieRespo movieRespo)? removeMyList,
   }) {
     return initialize?.call(id);
   }
@@ -187,8 +165,8 @@ class _$Initialize implements Initialize {
   @optionalTypeArgs
   TResult maybeWhen<TResult extends Object?>({
     TResult Function(String id)? initialize,
-    TResult Function(String id)? addMyList,
-    TResult Function(String id)? removeMyList,
+    TResult Function(MovieRespo movieRespo)? addMyList,
+    TResult Function(MovieRespo movieRespo)? removeMyList,
     required TResult orElse(),
   }) {
     if (initialize != null) {
@@ -235,23 +213,19 @@ class _$Initialize implements Initialize {
 abstract class Initialize implements MoviesEvent {
   const factory Initialize({required final String id}) = _$Initialize;
 
-  @override
   String get id;
-  @override
   @JsonKey(ignore: true)
   _$$InitializeCopyWith<_$Initialize> get copyWith =>
       throw _privateConstructorUsedError;
 }
 
 /// @nodoc
-abstract class _$$AddMyListCopyWith<$Res>
-    implements $MoviesEventCopyWith<$Res> {
+abstract class _$$AddMyListCopyWith<$Res> {
   factory _$$AddMyListCopyWith(
           _$AddMyList value, $Res Function(_$AddMyList) then) =
       __$$AddMyListCopyWithImpl<$Res>;
-  @override
   @useResult
-  $Res call({String id});
+  $Res call({MovieRespo movieRespo});
 }
 
 /// @nodoc
@@ -265,13 +239,13 @@ class __$$AddMyListCopyWithImpl<$Res>
   @pragma('vm:prefer-inline')
   @override
   $Res call({
-    Object? id = null,
+    Object? movieRespo = null,
   }) {
     return _then(_$AddMyList(
-      id: null == id
-          ? _value.id
-          : id // ignore: cast_nullable_to_non_nullable
-              as String,
+      movieRespo: null == movieRespo
+          ? _value.movieRespo
+          : movieRespo // ignore: cast_nullable_to_non_nullable
+              as MovieRespo,
     ));
   }
 }
@@ -279,14 +253,14 @@ class __$$AddMyListCopyWithImpl<$Res>
 /// @nodoc
 
 class _$AddMyList implements AddMyList {
-  _$AddMyList({required this.id});
+  _$AddMyList({required this.movieRespo});
 
   @override
-  final String id;
+  final MovieRespo movieRespo;
 
   @override
   String toString() {
-    return 'MoviesEvent.addMyList(id: $id)';
+    return 'MoviesEvent.addMyList(movieRespo: $movieRespo)';
   }
 
   @override
@@ -294,11 +268,12 @@ class _$AddMyList implements AddMyList {
     return identical(this, other) ||
         (other.runtimeType == runtimeType &&
             other is _$AddMyList &&
-            (identical(other.id, id) || other.id == id));
+            (identical(other.movieRespo, movieRespo) ||
+                other.movieRespo == movieRespo));
   }
 
   @override
-  int get hashCode => Object.hash(runtimeType, id);
+  int get hashCode => Object.hash(runtimeType, movieRespo);
 
   @JsonKey(ignore: true)
   @override
@@ -310,32 +285,32 @@ class _$AddMyList implements AddMyList {
   @optionalTypeArgs
   TResult when<TResult extends Object?>({
     required TResult Function(String id) initialize,
-    required TResult Function(String id) addMyList,
-    required TResult Function(String id) removeMyList,
+    required TResult Function(MovieRespo movieRespo) addMyList,
+    required TResult Function(MovieRespo movieRespo) removeMyList,
   }) {
-    return addMyList(id);
+    return addMyList(movieRespo);
   }
 
   @override
   @optionalTypeArgs
   TResult? whenOrNull<TResult extends Object?>({
     TResult? Function(String id)? initialize,
-    TResult? Function(String id)? addMyList,
-    TResult? Function(String id)? removeMyList,
+    TResult? Function(MovieRespo movieRespo)? addMyList,
+    TResult? Function(MovieRespo movieRespo)? removeMyList,
   }) {
-    return addMyList?.call(id);
+    return addMyList?.call(movieRespo);
   }
 
   @override
   @optionalTypeArgs
   TResult maybeWhen<TResult extends Object?>({
     TResult Function(String id)? initialize,
-    TResult Function(String id)? addMyList,
-    TResult Function(String id)? removeMyList,
+    TResult Function(MovieRespo movieRespo)? addMyList,
+    TResult Function(MovieRespo movieRespo)? removeMyList,
     required TResult orElse(),
   }) {
     if (addMyList != null) {
-      return addMyList(id);
+      return addMyList(movieRespo);
     }
     return orElse();
   }
@@ -376,25 +351,21 @@ class _$AddMyList implements AddMyList {
 }
 
 abstract class AddMyList implements MoviesEvent {
-  factory AddMyList({required final String id}) = _$AddMyList;
+  factory AddMyList({required final MovieRespo movieRespo}) = _$AddMyList;
 
-  @override
-  String get id;
-  @override
+  MovieRespo get movieRespo;
   @JsonKey(ignore: true)
   _$$AddMyListCopyWith<_$AddMyList> get copyWith =>
       throw _privateConstructorUsedError;
 }
 
 /// @nodoc
-abstract class _$$RemoveMyListCopyWith<$Res>
-    implements $MoviesEventCopyWith<$Res> {
+abstract class _$$RemoveMyListCopyWith<$Res> {
   factory _$$RemoveMyListCopyWith(
           _$RemoveMyList value, $Res Function(_$RemoveMyList) then) =
       __$$RemoveMyListCopyWithImpl<$Res>;
-  @override
   @useResult
-  $Res call({String id});
+  $Res call({MovieRespo movieRespo});
 }
 
 /// @nodoc
@@ -408,13 +379,13 @@ class __$$RemoveMyListCopyWithImpl<$Res>
   @pragma('vm:prefer-inline')
   @override
   $Res call({
-    Object? id = null,
+    Object? movieRespo = null,
   }) {
     return _then(_$RemoveMyList(
-      id: null == id
-          ? _value.id
-          : id // ignore: cast_nullable_to_non_nullable
-              as String,
+      movieRespo: null == movieRespo
+          ? _value.movieRespo
+          : movieRespo // ignore: cast_nullable_to_non_nullable
+              as MovieRespo,
     ));
   }
 }
@@ -422,14 +393,14 @@ class __$$RemoveMyListCopyWithImpl<$Res>
 /// @nodoc
 
 class _$RemoveMyList implements RemoveMyList {
-  _$RemoveMyList({required this.id});
+  _$RemoveMyList({required this.movieRespo});
 
   @override
-  final String id;
+  final MovieRespo movieRespo;
 
   @override
   String toString() {
-    return 'MoviesEvent.removeMyList(id: $id)';
+    return 'MoviesEvent.removeMyList(movieRespo: $movieRespo)';
   }
 
   @override
@@ -437,11 +408,12 @@ class _$RemoveMyList implements RemoveMyList {
     return identical(this, other) ||
         (other.runtimeType == runtimeType &&
             other is _$RemoveMyList &&
-            (identical(other.id, id) || other.id == id));
+            (identical(other.movieRespo, movieRespo) ||
+                other.movieRespo == movieRespo));
   }
 
   @override
-  int get hashCode => Object.hash(runtimeType, id);
+  int get hashCode => Object.hash(runtimeType, movieRespo);
 
   @JsonKey(ignore: true)
   @override
@@ -453,32 +425,32 @@ class _$RemoveMyList implements RemoveMyList {
   @optionalTypeArgs
   TResult when<TResult extends Object?>({
     required TResult Function(String id) initialize,
-    required TResult Function(String id) addMyList,
-    required TResult Function(String id) removeMyList,
+    required TResult Function(MovieRespo movieRespo) addMyList,
+    required TResult Function(MovieRespo movieRespo) removeMyList,
   }) {
-    return removeMyList(id);
+    return removeMyList(movieRespo);
   }
 
   @override
   @optionalTypeArgs
   TResult? whenOrNull<TResult extends Object?>({
     TResult? Function(String id)? initialize,
-    TResult? Function(String id)? addMyList,
-    TResult? Function(String id)? removeMyList,
+    TResult? Function(MovieRespo movieRespo)? addMyList,
+    TResult? Function(MovieRespo movieRespo)? removeMyList,
   }) {
-    return removeMyList?.call(id);
+    return removeMyList?.call(movieRespo);
   }
 
   @override
   @optionalTypeArgs
   TResult maybeWhen<TResult extends Object?>({
     TResult Function(String id)? initialize,
-    TResult Function(String id)? addMyList,
-    TResult Function(String id)? removeMyList,
+    TResult Function(MovieRespo movieRespo)? addMyList,
+    TResult Function(MovieRespo movieRespo)? removeMyList,
     required TResult orElse(),
   }) {
     if (removeMyList != null) {
-      return removeMyList(id);
+      return removeMyList(movieRespo);
     }
     return orElse();
   }
@@ -519,11 +491,9 @@ class _$RemoveMyList implements RemoveMyList {
 }
 
 abstract class RemoveMyList implements MoviesEvent {
-  factory RemoveMyList({required final String id}) = _$RemoveMyList;
+  factory RemoveMyList({required final MovieRespo movieRespo}) = _$RemoveMyList;
 
-  @override
-  String get id;
-  @override
+  MovieRespo get movieRespo;
   @JsonKey(ignore: true)
   _$$RemoveMyListCopyWith<_$RemoveMyList> get copyWith =>
       throw _privateConstructorUsedError;

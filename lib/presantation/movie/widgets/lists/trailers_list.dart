@@ -41,7 +41,7 @@ class TrailersListWidgets extends StatelessWidget {
                   final movie = state.releasedIntThePastYearList[index];
                   return InkWell(
                     onTap: () {
-                      Navigator.push(
+                      Navigator.pushReplacement(
                           context,
                           MaterialPageRoute(
                             builder: (context) =>
