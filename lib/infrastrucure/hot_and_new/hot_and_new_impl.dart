@@ -20,7 +20,7 @@ class HotAndNewImplimentation implements HotAndNewService {
       // log(response.data.toString());
       if (response.statusCode == 200 || response.statusCode == 201) {
         final result = HotAndNewResp.fromJson(response.data);
-        return Right(result);
+        return Right(result); 
       } else {
         //failure
         return const Left(MainFailure.serverFailure());

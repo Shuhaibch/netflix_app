@@ -1,4 +1,3 @@
-
 import 'package:flutter/material.dart';
 import 'package:google_fonts/google_fonts.dart';
 
@@ -15,8 +14,7 @@ class BackButtonWidget extends StatelessWidget {
       children: [
         ElevatedButton(
           style: const ButtonStyle(
-              backgroundColor:
-                  MaterialStatePropertyAll(Colors.black)),
+              backgroundColor: MaterialStatePropertyAll(Colors.black)),
           onPressed: () {
             Navigator.pop(context);
           },

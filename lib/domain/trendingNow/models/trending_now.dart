@@ -1,6 +1,5 @@
 import 'package:json_annotation/json_annotation.dart';
 
-
 part 'trending_now.g.dart';
 
 @JsonSerializable()
@@ -11,7 +10,7 @@ class TrendingNow {
   @JsonKey(name: 'results')
   List<TrendingData> results;
 
-  TrendingNow({this.page, this.results=const []});
+  TrendingNow({this.page, this.results = const []});
 
   factory TrendingNow.fromJson(Map<String, dynamic> json) {
     return _$TrendingNowFromJson(json);
@@ -19,7 +18,6 @@ class TrendingNow {
 
   Map<String, dynamic> toJson() => _$TrendingNowToJson(this);
 }
-
 
 @JsonSerializable()
 class TrendingData {

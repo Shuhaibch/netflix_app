@@ -7,7 +7,7 @@ class MainImageCard extends StatelessWidget {
 
   const MainImageCard({
     super.key,
-    required this.imageUrl, 
+    required this.imageUrl,
   });
 
   @override

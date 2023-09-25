@@ -11,7 +11,7 @@ class MoviesState with _$MoviesState {
   factory MoviesState.initial() => const MoviesState(
         movieList: [],
         isLoading: false,
-        isError: false, addMyList: [],
+        isError: false,
+        addMyList: [],
       );
-  
 }

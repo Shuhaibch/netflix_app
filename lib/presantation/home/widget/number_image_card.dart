@@ -11,7 +11,8 @@ const numberimage =
 class NumberImageCard extends StatelessWidget {
   const NumberImageCard({
     Key? key,
-    required this.index, required this.imageUrl,
+    required this.index,
+    required this.imageUrl,
   }) : super(key: key);
   final int index;
   final String imageUrl;
@@ -35,7 +36,7 @@ class NumberImageCard extends StatelessWidget {
                   height: 180,
                   decoration: BoxDecoration(
                     borderRadius: kRadius12,
-                    image:  DecorationImage(
+                    image: DecorationImage(
                       fit: BoxFit.fill,
                       image: NetworkImage(imageUrl),
                     ),

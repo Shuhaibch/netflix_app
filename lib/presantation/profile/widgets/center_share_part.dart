@@ -114,9 +114,7 @@ class CenterShareWidget extends StatelessWidget {
               ),
               child: ShareImageButtons(),
             ),
-            
           ],
-          
         ),
       ),
     );

@@ -1,4 +1,3 @@
-
 import 'package:flutter/material.dart';
 
 import '../../../core/colors/colors.dart';
@@ -69,6 +68,3 @@ class ProfilePictureWidget extends StatelessWidget {
     );
   }
 }
-
-
-

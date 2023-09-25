@@ -43,5 +43,3 @@ const netflixbg =
 
 TextStyle kMaincard3Btn =
     const TextStyle(fontSize: 15, fontWeight: FontWeight.bold);
-
-

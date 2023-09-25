@@ -1,6 +1,5 @@
 // ignore_for_file: file_names, no_leading_underscores_for_local_identifiers
 
-
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:netflix_app/presantation/new&hot/widget/coming_soon_widget.dart';
@@ -81,41 +80,38 @@ class ComingSoonList extends StatelessWidget {
             return const Center(
               child: Text('Comingsoon List is empty'),
             );
-
-          }
-
-          else {
+          } else {
             return ListView.builder(
-                itemCount: state.comingSoonList.length,
-                itemBuilder: (context, index) {
-                  final movie = state.comingSoonList[index];
-                  if (movie.id == null) {
-                    const SizedBox();
-                  }
-                  // print(movie.releaseDate);
-                  String month = '';
-                  String date = '';
-                  try {
-                    final _date = DateTime.parse(movie.releaseDate!);
-                    final formatedDate =
-                        DateFormat.yMMMMd('en_US').format(_date);
-                    month = formatedDate.split(' ').first.substring(0, 3);
-                    date = movie.releaseDate!.split('-')[1];
-                  } catch (_) {
-                    month = '';
-                    date = '';
-                  }
-                  return Padding(
-                    padding: const EdgeInsets.only(top: 8),
-                    child: ComingSoonWidget(
-                        id: movie.id.toString(),
-                        day: date,
-                        month: month,
-                        posterPath: "$imageAppendUrl${movie.backdropPath}",
-                        movieName: movie.originalTitle ?? 'No Title',
-                        description: movie.overview ?? 'No description'),
-                  );
-                });
+              itemCount: state.comingSoonList.length,
+              itemBuilder: (context, index) {
+                final movie = state.comingSoonList[index];
+                if (movie.id == null) {
+                  const SizedBox();
+                }
+                // print(movie.releaseDate);
+                String month = '';
+                String date = '';
+                try {
+                  final _date = DateTime.parse(movie.releaseDate!);
+                  final formatedDate = DateFormat.yMMMMd('en_US').format(_date);
+                  month = formatedDate.split(' ').first.substring(0, 3);
+                  date = movie.releaseDate!.split('-')[1];
+                } catch (_) {
+                  month = '';
+                  date = '';
+                }
+                return Padding(
+                  padding: const EdgeInsets.only(top: 8),
+                  child: ComingSoonWidget(
+                      id: movie.id.toString(),
+                      day: date,
+                      month: month,
+                      posterPath: "$imageAppendUrl${movie.backdropPath}",
+                      movieName: movie.originalTitle ?? 'No Title',
+                      description: movie.overview ?? 'No description'),
+                );
+              },
+            );
           }
         },
       ),

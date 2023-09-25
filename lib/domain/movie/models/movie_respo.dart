@@ -76,7 +76,7 @@ class MovieRespo {
     this.overview,
     this.popularity,
     this.posterPath,
-    this.productionCompanies=const[],
+    this.productionCompanies = const [],
     this.releaseDate,
     this.revenue,
     this.runtime,

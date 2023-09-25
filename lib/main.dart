@@ -30,7 +30,6 @@ class MyApp extends StatelessWidget {
         BlocProvider(create: (context) => getIt<HotAndNewBloc>()),
         BlocProvider(create: (context) => getIt<HomeBloc>()),
         BlocProvider(create: (context) => getIt<MoviesBloc>()),
-
       ],
       child: MaterialApp(
         title: 'NetFlix',
